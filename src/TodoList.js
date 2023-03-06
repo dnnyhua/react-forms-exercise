@@ -18,6 +18,15 @@ const TodoList = () => {
         setTodos(todos => todos.filter(todo => todo.id !== id))
     }
 
+    const update = (id, updatedTodoTask) => {
+        setTodos(todos =>
+            // map through each todo item, if id of item matches the id of item being update, then replace with updated value, else keep value the same
+            todos.map(todo =>
+                todo.id === id ? { ...todo, todoTask: updatedTodoTask } : todo
+            )
+        )
+    }
+
     return (
         <div>
             <NewTodoForm addTodo={addTodo} />
@@ -27,6 +36,7 @@ const TodoList = () => {
                     id={id}
                     todoTask={todoTask}
                     removeTodo={removeTodo}
+                    updateTodo={update}
                 />
             )}
         </div>

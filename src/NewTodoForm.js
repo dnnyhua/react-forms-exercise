@@ -1,4 +1,5 @@
 import { useState } from "react"
+import './NewTodoForm.css'
 
 const NewTodoForm = ({ addTodo }) => {
     const INITIAL_STATE = {
@@ -21,7 +22,7 @@ const NewTodoForm = ({ addTodo }) => {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form className="NewTodoForm" onSubmit={handleSubmit}>
             <label htmlFor="todoTask">Todo</label>
             <input
                 id="todoTask"
